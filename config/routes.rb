@@ -1,4 +1,6 @@
 Norma::Application.routes.draw do
+  resources :components
+
   match '/index', :to => 'pages#index'
   match '/about_us', :to => 'pages#about_us'
   match '/comments', :to => 'comments#index'

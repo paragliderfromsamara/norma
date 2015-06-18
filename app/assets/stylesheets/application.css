@@ -11,7 +11,8 @@
  *= require_self
  *= require_tree .
  */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, ul, li, fieldset, form, label { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; border-color:#BCBCBC; border-style: solid;}
+fieldset {border: 1px solid grey; border-radius: 6px;}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, ul, li, form, label { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; border-color:#BCBCBC; border-style: solid;}
 ol, ul { list-style: none; }
  @font-face {
     font-family: 'bitterregular';

@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   has_many :photos, :dependent => :delete_all
   has_many :attachment_files, :dependent => :delete_all
   has_many :comments, :dependent => :delete_all
+  has_many :component_links
   belongs_to :photo
   belongs_to :product
   
@@ -68,11 +69,11 @@ class Product < ActiveRecord::Base
   end
   
   def options
-	Product.find_all_by_product_id(id)
+	Product.where(:product_id => id)
   end
   
   def rur_cost
-	cost.to_s + ' рублей'
+	(cost == 0.0)? (cost.to_s + ' рублей'):'Цена не указана'
   end
   
   def nds
