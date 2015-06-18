@@ -1,0 +1,68 @@
+<div id = 'text_wrapper'>
+<%= link_to('Изменить', edit_product_path(@product)) + " | " if admin?  %> <%= link_to 'Удалить', @product, :data => { :confirm => 'Вы уверены что хотите удалить прибор?' }, :method => :delete if user_type == 'admin'%>  
+<%= link_to 'К списку продукции', products_path %>
+<p id="notice"><%= notice %></p>
+<table style = "width: 100%; height: 350px;">
+	<tr>
+		<td>
+		<% if @product.photos != [] %>
+			<div style = 'position: relative;'>
+				<div style = 'width: 100%;'>
+					<% if @product.photo != nil %><a href = "<%= @product.photo.link %>" data-lightbox="roadtrip" title = "<%= @product.photo.description %>"><%= image_tag @product.photo.link.thumb %></a><% end %>
+				</div>
+				<div style = 'height: 60;'>
+					<% @photos.each do |photo| %>
+						<a href = "<%= photo.link %>" data-lightbox="roadtrip" title = "<%= photo.description %>"><%= image_tag photo.link.mini, :height => '30px'  %></a>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		</td>
+		<td valign = "top">
+				<div class = 'mini_cost_block'>
+					<div id = 'cost'>
+						Цена*: <%= @product.rur_cost.html_safe %>
+					</div>
+					
+
+				</div>
+				<div class = 'cost_description'>
+					<div style = 'padding-top: 10px; padding-left: 7px; padding-right: 7px; padding-bottom: 10px;'>
+						<% if @product.notice.strip != '' %>
+							<%= @product.notice.html_safe %>
+							<br />
+						<% end %>
+						<%= @product.nds.html_safe %>
+					</div>
+				</div>
+					<br />
+				<div class = 'list_items_parent_block'>
+					<%= show_options(@product) %>
+					<%= show_parent_device(@product) %>
+					<%= comments_list %>
+				</div>
+		</td>
+	</tr>
+</table>
+
+<p id = 'text'>
+  <%= @product.description.html_safe %>
+</p>
+
+<%= "<hr /><h2>Клиентам</h2>".html_safe if @product.attachment_files != [] %>
+  <br />
+  <%= attachments("document") %>
+    <br />
+  <%= attachments("firmware") %>
+      <br />
+  <%= attachments("softaware") %>
+
+</div>
+
+
+
+
+ <br />
+ <br />
+ <br />
+

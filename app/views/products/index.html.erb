@@ -1,0 +1,10 @@
+<%= productCategoryMenu %>
+<hr />
+<% if @flag == 0 %>
+	<%= productsByCategories %>
+	<br />
+<% else %>
+	<div class = 'categoryHeader'><div id = 'text_wrapper'><h3 style = 'display: block; position: relative;top: 4px;'><%= @cur[:m_name] %></h3></div></div>
+	<%= productBlocksArray(@products).html_safe %>
+<% end %>
+<%= link_to 'Добавить', new_product_path if admin? %>

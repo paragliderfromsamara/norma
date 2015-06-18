@@ -1,0 +1,48 @@
+	<% if user_type == 'admin' %>
+	<div id = 'text_wrapper'>
+	<h3>Обновить прайс лист</h3>
+	<br />
+	<%= form_for(@attachment_file) do |f| %>
+		<%= f.hidden_field :product_id, :value => 0 %>
+		<%= f.hidden_field :file_type, :value => 'price_list' %>
+			<span>Добавить файл:</span>
+			<br />
+			<%= f.file_field :link %>
+			<%= f.submit "Загрузить" %>
+		<% end %>
+	</div>
+	<hr />
+	<% end %>
+	<div class = 'categoryHeader'>
+		<div id = 'text_wrapper'>
+			<h3 style = 'display: block; position: relative;top: 4px;'>Коротко о нас</h3>
+		</div>
+	</div>
+	<div id = 'text_wrapper'>
+	<p id = 'text'>
+		Мы, Научно-производственное предприятие «НОРМА», более 30-ти лет разрабатываем и выпускаем автоматизированные системы, 
+		комплексы и многофункциональную аппаратуру для контроля и испытаний электрических параметров различной кабельной 
+		продукции на стадии её производства и эксплуатации <%= link_to 'подробнее... ', '/about_us' %> 
+	</p>
+	</div>
+	<br />
+	<hr />
+	<div class = 'categoryHeader'>
+		<div id = 'text_wrapper'>
+			<h3 style = 'display: block; position: relative;top: 4px;'>Производимая продукция</h3>
+		</div>
+	</div>
+	<div id = 'text_wrapper'>
+			<p id = 'text' style = 'font-size: 20pt;'>
+				<%= link_to 'Перейти к полной номенклатуре выпускаемой продукции', products_path %>.
+			</p>
+	</div>
+	<br />
+	<%= productBlocksArray(@products).html_safe %>
+	
+
+
+
+
+
+

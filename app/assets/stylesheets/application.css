@@ -1,0 +1,254 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, ul, li, fieldset, form, label { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; border-color:#BCBCBC; border-style: solid;}
+ol, ul { list-style: none; }
+ @font-face {
+    font-family: 'bitterregular';
+    src: url('/bitter_font/bitter-regular.eot');
+    src: url('/bitter_font/bitter-regular.eot?#iefix') format('embedded-opentype'),
+         url('/bitter_font/bitter-regular.woff') format('woff'),
+         url('/bitter_font/bitter-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bitterbold';
+    src: url('/bitter_font/bitter-bold.eot');
+    src: url('/bitter_font/bitter-bold.eot?#iefix') format('embedded-opentype'),
+         url('/bitter_font/bitter-bold.woff') format('woff'),
+         url('/bitter_font/bitter-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bitteritalic';
+    src: url('/bitter_font/bitter-italic.eot');
+    src: url('/bitter_font/bitter-italic.eot?#iefix') format('embedded-opentype'),
+         url('/bitter_font/bitter-italic.woff') format('woff'),
+         url('/bitter_font/bitter-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bitterbold_italic';
+    src: url('/bitter_font/bitter-bolditalic.eot');
+    src: url('/bitter_font/bitter-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('/bitter_font/bitter-bolditalic.woff') format('woff'),
+         url('/bitter_font/bitter-bolditalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: 'Kraskario';
+    src: url('/kraskario_font/kraskario.eot');
+    src: url('/kraskario_font/kraskario.eot?#iefix') format('embedded-opentype'),
+         url('/kraskario_font/kraskario.woff') format('woff'),
+         url('/kraskario_font/kraskario.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kraskario';
+    src: url('/kraskario_font/kraskario_italic.eot');
+    src: url('/kraskario_font/kraskario_italic.eot?#iefix') format('embedded-opentype'),
+         url('/kraskario_font/kraskario_italic.woff') format('woff'),
+         url('/kraskario_font/kraskario_italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+h1 {position: relative; display: block; font-size: 18pt; font-family: bitterbold; padding-left: 100px;}
+h3 {font-family: bitterbold;}
+#wrapper, #black_top, #bottom, #img_top, #content, #content_header{position: relative;min-width: 1000px;width: 100%;}
+#wrapper { margin-left: auto; margin-right: auto;  height: 100%;}
+#top_panel {height: 50px; color: white; min-width: 1000px;width: 100%;position:fixed;top:0; z-index: 1000;}
+#black_top {height: 400px; background-color: black; color: white;}
+#background_top {background-image: url(/files/main_title.png); width: 1000px; height: 400px; position: relative;background-repeat: no-repeat; }
+#logo_top {width: 500px; height: 150px; position: absolute; top: 50px; left:50px; z-index: 100;}
+#note_top {height: 150px; width: 600px; position: absolute; top: 100px; right:50px; } 
+#bigFontNote {font-family:'Kraskario', 'Tahoma'; font-size: 35px;}
+#smallFontNote {font-family:'Kraskario'; font-size: 20px;  font-style: italic;}
+#bottom {
+			background-color:#231B15;
+			height: 150px;
+			color: white; 
+		}
+#content {/* background-color: #231B15; */
+		background: rgb(83,67,56);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUzNDMzOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMzFiMTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(83,67,56,1) 0%, rgba(35,27,21,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(83,67,56,1)), color-stop(100%,rgba(35,27,21,1)));
+background: -webkit-linear-gradient(top,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+background: -o-linear-gradient(top,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+background: -ms-linear-gradient(top,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+background: linear-gradient(to bottom,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#534338', endColorstr='#231b15',GradientType=0 );
+
+		 }
+#content a {font-family: Tahoma; font-size: 14px; font-weight: bolder; color: #775b49; }
+#content a:hover {color: #4E3F34;}
+#content_wrapper, #bottom_wrapper {position: relative; margin-left: auto; margin-right: auto; height: 100%; width: 75%; min-width: 1000px; z-index:2;}
+#content_wrapper {background-color: white; padding-top: 7px;}
+#content_header {border-bottom-width:1px;height: 40px; background-color:#FFDFC5; vertical-align: middle;}
+#content_header h1{top: 5px;}
+#nav_panel {position: absolute; top: 13px; right: 100px;}
+#nav_panel li {display: inline-block; padding-left: 20px; color: white; font-family: Tahoma; font-size: 20px;}
+#nav_panel li:hover {color:#FFDFC5; text-decoration:underline;}
+#text_wrapper {min-width: 980px; width: 96%; position: relative; margin-left: auto; margin-right: auto; z-index: 10;}
+}
+/*Product_block old*/
+.product_block
+{
+	width: 100%;
+	background-color: #FEEDDF;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	overflow: hidden;
+	behavior: url(/files/ie-css3.htc);
+}
+#product_header
+{
+	width: 100%;
+	min-width: 900px;
+	height: 25px;
+	background: rgb(83,67,56);
+	color: white;
+	font-family: bitterregular;
+	font-size: 15pt;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-khtml-border-radius:3px;
+	behavior: url(/files/ie-css3.htc);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUzNDMzOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMzFiMTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(83,67,56,1) 0%, rgba(35,27,21,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(83,67,56,1)), color-stop(100%,rgba(35,27,21,1)));
+background: -webkit-linear-gradient(top,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+background: -o-linear-gradient(top,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+background: -ms-linear-gradient(top,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+background: linear-gradient(to bottom,  rgba(83,67,56,1) 0%,rgba(35,27,21,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#534338', endColorstr='#231b15',GradientType=0 );
+
+}
+
+#product_block_content
+{
+	width: 100%;
+	min-width: 900px;
+	min-height: 200px;
+}
+/*Product_block old end*/
+#cost {font-family: Tahoma; font-size: 14pt;}
+#text {font-family: Kraskario, Tahoma; font-size: 15pt;}
+#getPriceButton {
+					position: absolute;
+					width: 180px;
+					height: 45px;
+					font-size: 15pt;
+					color: #333333;
+					bottom: 70px;
+					right: 100px;
+					font-family: Tahoma;
+					border-radius:5px;
+					-webkit-border-radius:5px;
+					-moz-border-radius:5px;
+					-khtml-border-radius:5px;
+					behavior: url(files/ie-css3.htc);
+					cursor: pointer;
+					background: rgb(243,226,199);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzZTJjNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2MxOWU2NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2I2OGQ0YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOWQ0YjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 50%, rgba(182,141,76,1) 51%, rgba(233,212,179,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,226,199,1)), color-stop(50%,rgba(193,158,103,1)), color-stop(51%,rgba(182,141,76,1)), color-stop(100%,rgba(233,212,179,1)));
+background: -webkit-linear-gradient(top, rgba(243,226,199,1) 0%,rgba(193,158,103,1) 50%,rgba(182,141,76,1) 51%,rgba(233,212,179,1) 100%);
+background: -o-linear-gradient(top, rgba(243,226,199,1) 0%,rgba(193,158,103,1) 50%,rgba(182,141,76,1) 51%,rgba(233,212,179,1) 100%);
+background: -ms-linear-gradient(top, rgba(243,226,199,1) 0%,rgba(193,158,103,1) 50%,rgba(182,141,76,1) 51%,rgba(233,212,179,1) 100%);
+background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(193,158,103,1) 50%,rgba(182,141,76,1) 51%,rgba(233,212,179,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 );
+				}
+#getPriceButton:hover {
+	background: rgb(243,226,199);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YzZTJjNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE3JSIgc3RvcC1jb2xvcj0iI2MxOWU2NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjU0JSIgc3RvcC1jb2xvcj0iI2I2OGQ0YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOWQ0YjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(243,226,199,1) 0%, rgba(193,158,103,1) 17%, rgba(182,141,76,1) 54%, rgba(233,212,179,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,226,199,1)), color-stop(17%,rgba(193,158,103,1)), color-stop(54%,rgba(182,141,76,1)), color-stop(100%,rgba(233,212,179,1)));
+background: -webkit-linear-gradient(top,  rgba(243,226,199,1) 0%,rgba(193,158,103,1) 17%,rgba(182,141,76,1) 54%,rgba(233,212,179,1) 100%);
+background: -o-linear-gradient(top,  rgba(243,226,199,1) 0%,rgba(193,158,103,1) 17%,rgba(182,141,76,1) 54%,rgba(233,212,179,1) 100%);
+background: -ms-linear-gradient(top,  rgba(243,226,199,1) 0%,rgba(193,158,103,1) 17%,rgba(182,141,76,1) 54%,rgba(233,212,179,1) 100%);
+background: linear-gradient(to bottom,  rgba(243,226,199,1) 0%,rgba(193,158,103,1) 17%,rgba(182,141,76,1) 54%,rgba(233,212,179,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 );
+	}
+	
+#getPriceButton a{text-decoration: none;}
+#c_ph {border-width: 1px;}
+
+.prodBlock
+{
+	position: relative;
+	/* width: 33%; */
+	/* height: 300px; */
+	background-color: #FFDFC5;
+/* 	display: inline-block; */
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-right: 0;
+	padding-right: 0;
+	border-width: 0;
+}
+#prodBlockFog {position: absolute; width: 100%; height: 100%;background-color:#FFDFC5; cursor: pointer; z-index: 200;}
+.prodBlockText {position: absolute; color: white; font-family: Kraskario, Tahoma; font-size: 30px; top: 10%; left: 5%; z-index: 190;}
+#prodBlockBut {position: absolute; color: #FFF5EA; font-family: Tahoma; font-size: 14px; bottom: 10%; left: 5%; z-index: 200; background-color:#9C806B; width: 100px; height: 30px; padding-top: 10px;}
+#block_wrap{position: relative; margin-left: auto; margin-right: auto;}
+.categoryBlock
+	{
+		position: relative;
+		width: 100%;
+		background-color: #FCF2EA;
+		border-bottom-width: 1px;
+	}
+.categoryHeader
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #FCE2D1;
+		width: 100%;
+		height: 30px;
+		min-width: 1000px;
+	}
+.central_field
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+#categoryMenu a
+	{
+		color:#FCF2EA; font-family: Tahoma; font-size: 14px; font-weight: bolder;
+	}
+#categoryMenu ul {height: 100%;}
+#categoryMenu li
+	{
+		display: inline-block;
+	}
+#categoryMenu div {padding-left: 10px;padding-right: 10px;padding-top:7px;padding-bottom:7px;}
+#notSelCat {background-color: #534338;}
+#notSelCat:hover {background-color:#FFDFC5;}
+#selCat {color: #4F4035; font-family: Tahoma; font-size: 14px; font-weight: bolder; background-color:#FFDFC5;}

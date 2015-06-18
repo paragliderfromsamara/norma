@@ -1,0 +1,61 @@
+<%= form_for(@message, :html => {:url => '', :multipart => true, :method => :post}) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<%= f.hidden_field :from, :value => "#{my_address}" %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :message_type, :value => "output" %>
+	<%= f.hidden_field :message_id, :value => @message_id.to_s %>
+	<%= f.hidden_field :folder_id, :value => 2 %>
+	<%= f.hidden_field :in_reply, :value => @message_to.mail_id %>
+	<input type = 'hidden' name = 'folder_flag' value = 2 />
+  <table>
+	<tr>
+		<td>
+			<%= f.label :to, 'Кому: ' %>
+		</td>
+		<td>
+			<%= f.text_field :to, :size => 100 %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= f.label :copy, 'Копия: ' %>
+		</td>
+		<td>
+			<%= f.text_field :copy, :size => 100 %>
+		</td>
+		
+	</tr>
+	<tr>
+		<td>
+			<%= f.label :subject, 'Тема: ' %>
+		</td>
+		<td>
+			<%= f.text_field :subject, :size => 100 %>
+		</td>
+	</tr>
+  </table>
+
+  <div class="field">
+    <%= f.label :content, 'Текст письма' %><br />
+    <%= f.text_area :content, :value => "#{reply_content}", :cols => 100, :rows => 25 %>
+  </div>
+
+  <div>
+	<label for="message_add_attachments">Вложения: </label><br />
+	<%= f.file_field :add_attachments, :multiple => true %> <br /><br />
+  </div>
+  <hr />
+  <div class="actions">
+    <%= f.submit 'Отправить письмо' %> <%= f.submit 'Сохранить в черновиках' %>
+  </div>
+<% end %>

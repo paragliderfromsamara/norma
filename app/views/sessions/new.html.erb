@@ -1,0 +1,27 @@
+
+
+						<%= form_for(:session, :url => sessions_path(:redirect_to => 'index')) do |f|  %>
+							<table style = "width: 90%;">
+								<tr>
+									<td align = 'left' width = '30px'>
+										<b>Имя:</b>
+									</td>
+									<td align = 'left'>
+										<%= f.text_field :name, :size => 33  %>
+									</td>
+								</tr>
+								<tr>
+									<td align = 'left' width = '30px'>
+										<b>Пароль:</b> 
+									</td>
+									<td align = 'left'>
+										<%= f.password_field :password, :size => 33 %>
+									</td>
+								</tr>
+								<tr>
+									<td align = 'left' colspan = '2'>
+										<%= f.submit "Войти" %>
+									</td>
+								</tr>
+							</table>
+						<% end %>

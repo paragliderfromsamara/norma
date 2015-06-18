@@ -1,0 +1,18 @@
+<%= render current_folder[2] %>
+<% page_title %>
+<% if @messages == [] %>
+			<%= "Папка #{current_folder[0]} пуста" %>
+<% else %>
+	<%= form_tag('message', :url => '', :multipart => true, :method => :post, :id => 'new_message', :name => 'messages') %>
+	<input id = 'to_folder' type = 'hidden' name = 'to_folder' value = ''>
+	<input type = 'hidden' name = 'elems_on_page' value = '50'>
+	<% i = 0 %>
+		<% @messages.each do |message| %>
+			<% i += 1 %>
+				<%= message_in_list_item(message, i).html_safe %>
+		<% end %>
+	</form>
+<% end %>
+
+
+

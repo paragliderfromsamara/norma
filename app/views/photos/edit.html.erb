@@ -1,0 +1,9 @@
+  <div>
+	<%= image_tag @photo.link.thumb %>
+  </div>
+
+<h3>Изменение</h3>
+
+<%= render 'form' %>
+
+<%= link_to 'К списку фотографий', photos_path(:product_id => @photo.product_id) %>

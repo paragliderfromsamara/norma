@@ -1,0 +1,19 @@
+<% mark_as_read %>
+<% params[:folder] = @message.folder_id.to_s %>
+<% if @message.message_type == 'input' %>
+	<%= top_menu(['reply', 'to_archive', 'delete']) %>
+<% elsif @message.message_type == 'output' %>
+	<% if @message.folder_id == 3 %>
+		<%= top_menu(['redirect']) %>
+	<% elsif @message.folder_id == 2 %>
+		<%= top_menu(['send', 'save_as_draft']) %>
+	<% else %>
+		<%= top_menu(['redirect', 'save_as_draft']) %>
+	<% end %>
+<% end %>
+<p id="notice"><%= notice %></p>
+<%= message_block %>
+<br />
+
+<%= link_to 'Изменить', edit_message_path(@message) %> |
+<%= link_to 'Назад', messages_path %>

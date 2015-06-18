@@ -1,0 +1,120 @@
+<% @meta_keywords = ["САК-ТВЧ-52В1", "Микроомметр", "Тераомметр", "ПИКА-ИКС", "система автоматизированного контроля кабеля", "цифровые высоковольтные установки", "контроль элетрических параметров", "измерение изоляции", "сопротивление жил", "жилы", "изоляция", "емкостные параметры", "сопротивление", "автоматизация", "томм-01", "момм-01"]  %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= my_metatags %>
+  <%= robot_meta_tag %>
+  <script type = 'text/javascript'>
+	$(document).ready(function(){my_functions();});	
+  </script>
+  <!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+</head>
+<body>
+<div id = 'wrapper'>
+	<div id = 'top_panel'>
+		<div id = 'nav_panel'><%= nav_panel %></div>
+		<div id = 'test'></div>
+	</div>
+	<div id = 'black_top'>
+			<div style = 'background-image: url(/files/main_title.png); width: 1000px; height: 400px; position: relative;'></div>
+			<div id = 'logo_top'>
+				<div style = 'float: left;'>
+					<img src = '/files/logo.png' width='130px'/>
+				</div>
+				<div align = 'center' style = 'position: relative;font-size: 90px; font-family: Kraskario, Tahoma; left: -50px;'>
+					<div style = 'position: relative;'>НОРМА</div>
+					<div align = 'center' style = 'position: relative;font-size: 19px; font-family:  Kraskario; top:-20px;'>
+						Научно-Производственное Предприятие
+					</div>
+				</div>
+				
+				<div id = 'sinceLogo' style = 'display: none;'>
+					<hr />
+					<div id = 'smallFontNote' align = 'center'>
+						Более 20-ти лет на рынке измерительных приборов...
+					</div>
+				</div>
+			</div>
+			<div id = 'note_top' align = 'center'>
+				<div id = 'bigFontNote'>Высокоточные контрольно-измерительные<br /> приборы и системы</div>
+				<div id = 'sinceNote' style = 'display: none;'align = 'center'>
+					<hr />
+					<div id = 'smallFontNote' >
+						Более 20-ти лет на рынке измерительных приборов...
+					</div>
+				</div>
+			</div> 
+			<a href = '<%= price.link %>'><div id = 'getPriceButton' align = 'center'>
+				<span style = 'position: relative;top: 7px;'>Прайс лист</span>
+			</div>
+			</a>
+	</div>
+	<div id = 'content'>
+		<% if @header != nil %>
+			<div id = 'content_header'>
+				<h1><%= @header %></h1>
+			</div>
+		<% end %>
+		<div id = 'content_wrapper'>
+			<%= yield %>
+		</div>
+	</div>
+	<div id = 'bottom'>
+		<div id = 'bottom_wrapper'>
+			<div style = 'position: relative; top: 20px;float: left;'><img src = '/files/logo.png' width = '100px'></div>
+			<div style = 'position: relative; top: 40px;margin-left: 120px;'>ООО "НПП "НОРМА", <br />Самара, <%= Time.zone.now.strftime("%Y") %>г.</div>
+			<div style = 'position: absolute; top: 40px; left: 45%;'>
+			<!-- Yandex.Metrika informer -->
+			<a href="https://metrika.yandex.ru/stat/?id=27122402&amp;from=informer"
+			target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/27122402/3_0_FFFFFFFF_EFEFEFFF_0_pageviews"
+			style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:27122402,lang:'ru'});return false}catch(e){}"/></a>
+			<!-- /Yandex.Metrika informer -->
+
+			<!-- Yandex.Metrika counter -->
+			<script type="text/javascript">
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter27122402 = new Ya.Metrika({id:27122402,
+								clickmap:true,
+								trackLinks:true,
+								accurateTrackBounce:true});
+					} catch(e) { }
+				});
+
+				var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks");
+			</script>
+			<noscript><div><img src="//mc.yandex.ru/watch/27122402" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+			<!-- /Yandex.Metrika counter -->
+			</div>
+			
+			<div style = 'position: absolute; right: 10px; width: 300px;' align = 'right'>
+				Контактный телефон: 8(846)99-77-524 <br />
+				Факс: 8(846)99-77-523 <br />
+				E-mail: info@npp-norma.ru
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

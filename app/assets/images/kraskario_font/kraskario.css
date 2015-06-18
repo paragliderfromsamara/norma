@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Kraskario';
+    src: url('kraskario.eot');
+    src: url('kraskario.eot?#iefix') format('embedded-opentype'),
+         url('kraskario.woff') format('woff'),
+         url('kraskario.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kraskario';
+    src: url('kraskario_italic.eot');
+    src: url('kraskario_italic.eot?#iefix') format('embedded-opentype'),
+         url('kraskario_italic.woff') format('woff'),
+         url('kraskario_italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
