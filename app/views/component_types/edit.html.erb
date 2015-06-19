@@ -1,0 +1,23 @@
+<div id = 'text_wrapper'>
+	<%= form_for(@type) do |f| %>
+		<% if @type.errors.any? %>
+			<div id="error_explanation">
+			  <h2><%= @type.errors.count %> ошибок допущено при заполнении поля:</h2>
+
+			  <ul>
+			  <% @type.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			  <% end %>
+			  </ul>
+			</div>
+		<% end %>
+		<br /><br />
+		<div class = 'field'>
+			<%= f.label :name, 'Название типа' %><br />
+			<%= f.text_field :name %>
+		</div>
+		<div class = 'field'>
+			<%= f.submit 'Сохранить изменения' %>
+		</div>
+	<% end %>
+</div>

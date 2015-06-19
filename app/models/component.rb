@@ -12,7 +12,7 @@ class Component < ActiveRecord::Base
   after_save :make_component_links
   
   validates :name, :presence => {:message => "Поле 'Название' не должно быть пустым"},
-				   :length => { :maximum => 32, :message => "Название не может быть длиннее 32-х знаков"},
+				   :length => { :maximum => 60, :message => "Название не может быть длиннее 60-х знаков"},
 				   :uniqueness => {:message => "Компонент с таким названием уже существует"}
   
   validate :component_type_validation
@@ -46,4 +46,34 @@ class Component < ActiveRecord::Base
   def uploaded_photos=(attrs)
 	attrs.each {|attr| self.photos.build(:link => attr)}
   end
+  
+  def alter_photo
+	if get_photo == nil
+		return '/files/nophoto.jpg'
+	else
+		return get_photo.link
+	end
+  end
+  
+  def alter_photo_mini
+	if get_photo == nil
+		return '/files/nophoto_mini.jpg'
+	else
+		return get_photo.link.mini
+	end
+  end
+  
+  def get_photo
+	p = nil
+	if self.photo == nil
+		if self.photos != []
+			self.update_attribute(:photo_id, self.photos.first.id)
+			p = self.photo
+		end
+	else
+		p = self.photo
+	end
+	return p
+  end
+  
 end

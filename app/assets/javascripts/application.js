@@ -47,7 +47,7 @@ function bottomControl()
 			$("#bottom").css('position', 'fixed');
 			$("#bottom").css('bottom', '0');
 			new_cont_h = window_h - sum_h + $("#content").outerHeight();
-			$("#content, #content_wrapper").height(new_cont_h);		
+			$("#content_wrapper").height(new_cont_h);		
 		}
 		else
 			{

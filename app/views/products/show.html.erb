@@ -23,8 +23,6 @@
 					<div id = 'cost'>
 						Цена*: <%= @product.rur_cost.html_safe %>
 					</div>
-					
-
 				</div>
 				<div class = 'cost_description'>
 					<div style = 'padding-top: 10px; padding-left: 7px; padding-right: 7px; padding-bottom: 10px;'>
@@ -44,19 +42,30 @@
 		</td>
 	</tr>
 </table>
+<div class = 'section group'>
+	<div class = 'col span_7_of_12'>
+		<p id = 'text'>
+			<%= @product.description.html_safe %>
+		</p>
+	</div>
+	<div class = 'col span_1_of_12'>
+	</div>
+	<% if @component_types != [] %>
+		<div class = 'col span_4_of_12'>
+			<h3>Комплектующие</h3><br />
+			<%= product_show_components_table %>
+		</div>
+	<% end %>
+</div>
 
-<p id = 'text'>
-  <%= @product.description.html_safe %>
-</p>
 
 <%= "<hr /><h2>Клиентам</h2>".html_safe if @product.attachment_files != [] %>
   <br />
   <%= attachments("document") %>
-    <br />
+  <br />
   <%= attachments("firmware") %>
-      <br />
+  <br />
   <%= attachments("softaware") %>
-
 </div>
 
 

@@ -1,34 +1,49 @@
 <div id = 'text_wrapper'>
-<h1>Listing components</h1>
+<table id = 'cTable'>
 
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Name</th>
-    <th>Photo</th>
-    <th>Description</th>
-    <th>Cost</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @components.each do |component| %>
-  <tr>
-    <td><%= component.component_type_id %></td>
-    <td><%= component.name %></td>
-    <td><%= component.photo_id %></td>
-    <td><%= component.description %></td>
-    <td><%= component.cost %></td>
-    <td><%= link_to 'Show', component %></td>
-    <td><%= link_to 'Edit', edit_component_path(component) %></td>
-    <td><%= link_to 'Destroy', component, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+<% @component_types.each do |type| %>
+	<tr>
+		<th colspan = '3'><p><%= type.name%></p></th>
+		<td colspan = '3' id = 'linkRow'><%= link_to 'изменить', edit_component_type_path(type) if user_type == 'admin' %></td>
+	</tr>
+	<% components = type.components.order('name ASC') %>
+	<% if components != [] %>
+			<tr>
+				<th  id = 'subHeader'></th>
+				<th  id = 'subHeader'><p>Название</p></th>
+				<th  id = 'subHeader'><p>Цена, руб.</p></th>
+				<th id = 'linkRow'></th>
+				<th id = 'linkRow'></th>
+				<th id = 'linkRow'></th>
+			</tr>
+		<% components.each do |component| %>
+		  <tr>
+			<td id = 'cPhoto'><%= image_tag component.alter_photo_mini %></td>
+			<td><p><%= component.name %></p></td>
+			<td id = 'cCost'><p><%= component.cost %></p></td>
+			<td id = 'linkRow'><%= link_to 'подробнее', component %></td>
+			<td id = 'linkRow'><%= link_to 'изменить', edit_component_path(component) if user_type == 'admin' %></td>
+			<td id = 'linkRow'><%= link_to 'удалить', component, :method => :delete, :data => { :confirm => 'Are you sure?' } if user_type == 'admin' %></td>
+		  </tr>
+		<% end %>
+	<% else %>
+			<tr>
+				<td colspan = '3' id = 'noComponents'>
+					<p>Нет ни одного компонента данного типа</p>
+				</td>
+				<td id = 'linkRow'>
+				</td>
+				<td id = 'linkRow'>
+				</td>
+				<td id = 'linkRow'>
+				</td>
+			</tr>
+	<% end %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Component', new_component_path %>
+<%= link_to 'Добавить компонент', new_component_path if user_type == 'admin'%>
 
 </div>

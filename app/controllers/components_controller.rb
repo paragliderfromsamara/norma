@@ -2,8 +2,8 @@ class ComponentsController < ApplicationController
   # GET /components
   # GET /components.json
   def index
-    @components = Component.all
-
+	@title = @header = 'Комплектующие'
+	@component_types = ComponentType.order('name ASC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @components }

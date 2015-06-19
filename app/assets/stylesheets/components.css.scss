@@ -1,3 +1,17 @@
 // Place all the styles related to the Components controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#cTable 
+{
+	width: 100%; 
+	#cCost {width: 200px;}
+	font-family: Tahoma;
+	#linkRow {background-color: white; width: 50px;}
+	#subHeader {background-color:#e5e5e5;}
+	th {background-color: #ffedcd; font-size: 14px; text-align: left;}
+	td {background-color: #fff6e7; font-size: 13px; text-align: left; vertical-align: middle;} 
+	th, td {p {padding: 10px 7px 10px 7px;}}
+	#noComponents {p{padding: 20px 7px 20px 20px;}}
+	#cPhoto {background-color: white; width: 40px;}
+}

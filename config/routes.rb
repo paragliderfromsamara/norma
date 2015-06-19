@@ -1,4 +1,6 @@
 Norma::Application.routes.draw do
+  resources :component_types, :only => [:edit, :update, :destroy]
+
   resources :components
 
   match '/index', :to => 'pages#index'

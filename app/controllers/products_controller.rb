@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 	@photos = @product.photos.all(:conditions => "id != #{@product.photo_id.to_s}") if @product.photo_id?
 	@comments = @product.comments
+	@component_types = @product.component_types
 	@title = @product.s_name
 	@header = @product.s_name
 	@meta_description = @product.note

@@ -18,6 +18,15 @@ class Product < ActiveRecord::Base
 	]
   end
   
+  def component_types
+	if self.component_links == []
+		return []
+	else
+		return ComponentType.where(:id => Component.where(:id => self.component_links.select(:component_id)).select(:component_type_id)).order('name ASC')
+		
+	end
+  end
+  
   def category
 	val = {}
 	if self.category_id == nil
@@ -73,7 +82,7 @@ class Product < ActiveRecord::Base
   end
   
   def rur_cost
-	(cost == 0.0)? (cost.to_s + ' рублей'):'Цена не указана'
+	(cost == 0.0)? 'Цена не указана':(cost.to_s + ' рублей')
   end
   
   def nds
